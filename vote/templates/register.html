@@ -1,0 +1,205 @@
+
+{% load i18n %}
+{% load crispy_forms_tags %}
+
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+
+	<link rel="stylesheet" href="/static/css/animate.css">
+	<link rel="stylesheet" href="/static/css/icomoon.css">
+	<link rel="stylesheet" href="/static/css/bootstrap.css">
+
+	<link rel="stylesheet" href="/static/css/flexslider.css">
+
+	<link rel="stylesheet" href="/static/css/style.css">
+	<script src="/static/js/modernizr-2.6.2.min.js"></script>
+
+
+	</head>
+  <body>
+<nav class="fh5co-nav" role="navigation">
+  <div class="top-menu">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-2">
+          <div id="fh5co-logo">SAFEVOTE</div>
+        </div>
+        <div class="col-xs-10 text-right menu-1">
+          <ul>
+            {% if user.is_authenticated %}
+						<li class="btn-cta"><a href="{% url 'login' %}"><span>Login</span></a></li>
+          {% else %}
+          <li class="btn-cta"><a href="{% url 'register' %}"><span>Sign Up</span></a></li>
+          <li class="btn-cta"><a href="{% url 'login' %}"><span>Login</span></a></li>
+          {% endif %}
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</nav>
+  <div class="jumbotron">
+    {% if registered %}
+    <div id="fh5co-started">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row animate-box">
+      <div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+        <h1>Welcome to the National Online Voting Interface.</h1>
+        <h3>You have been successfully registered to caste your vote!<br>
+          Please Click on the <b>Login</b> button to go further with the process.</h3>
+      </div>
+    </div>
+  </div>
+</div>
+    <div id="fh5co-blog">
+      <div class="container">
+    <div class="row">
+      <div class="col-md-6">
+        <div class="fh5co-blog animate-box">
+          <a href="#" class="blog-bg" style="background-image: url(/static/images/evoting.jpg);"></a>
+          <div class="blog-text">
+<!-- 							<span class="posted_on">Feb. 15th 2016</span>
+-->							<h3>Safe</h3>
+            <p>The voting process is completely safe with no chance of vote getting tampered and it reaches the candidate of your choice.</p>
+<!-- 						<ul class="stuff">
+              <li><i class="icon-heart2"></i>249</li>
+              <li><i class="icon-eye2"></i>1,308</li>
+              <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
+            </ul>
+   -->				</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="fh5co-blog animate-box">
+          <a href="#" class="blog-bg" style="background-image: url(/static/images/easy.png);"></a>
+          <div class="blog-text">
+<!-- 							<span class="posted_on">Feb. 15th 2016</span>
+-->							<h3>Convenient</h3>
+            <p>This app is very easy and convenient to use.You are guided throughout the process of voting and it is not at all cumbersome.</p>
+<!-- 						<ul class="stuff">
+              <li><i class="icon-heart2"></i>249</li>
+              <li><i class="icon-eye2"></i>1,308</li>
+              <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
+            </ul>
+     -->			</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="fh5co-blog animate-box">
+          <a href="#" class="blog-bg" style="background-image: url(/static/images/transp.jpg);"></a>
+          <div class="blog-text">
+<!-- 							<span class="posted_on">Feb. 15th 2016</span>
+-->							<h3>Transparent</h3>
+            <p>Complete transparency is taken care of. All details which are taken are stated beforehand. Also you are shown the current voting count of the candidates.</p>
+<!-- 						<ul class="stuff">
+              <li><i class="icon-heart2"></i>249</li>
+              <li><i class="icon-eye2"></i>1,308</li>
+              <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
+            </ul>
+   -->				</div>
+        </div>
+      </div>
+      <div class="col-md-6">
+        <div class="fh5co-blog animate-box">
+          <a href="#" class="blog-bg" style="background-image: url(/static/images/fact.jpg);"></a>
+          <div class="blog-text">
+<!-- 							<span class="posted_on">Feb. 15th 2016</span>
+-->							<h3>Candidate Information</h3>
+            <p>The interface provides you with information about the candidate such as assets and criminal records to help you with the voting process.</p>
+<!-- 							<ul class="stuff">
+              <li><i class="icon-heart2"></i>249</li>
+              <li><i class="icon-eye2"></i>1,308</li>
+              <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
+            </ul>
+   -->				</div>
+        </div>
+      </div>
+<!-- 			<div class="col-md-4">
+        <div class="fh5co-blog animate-box">
+          <a href="#" class="blog-bg" style="background-image: url(images/blog-2.jpg);"></a>
+          <div class="blog-text">
+            <span class="posted_on">Feb. 15th 2016</span>
+            <h3><a href="#">Surfing at Philippines</a></h3>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <ul class="stuff">
+              <li><i class="icon-heart2"></i>249</li>
+              <li><i class="icon-eye2"></i>1,308</li>
+              <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="fh5co-blog animate-box">
+          <a href="#" class="blog-bg" style="background-image: url(images/blog-3.jpg);"></a>
+          <div class="blog-text">
+            <span class="posted_on">Feb. 15th 2016</span>
+            <h3><a href="#">Focus On Uderwater</a></h3>
+            <p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+            <ul class="stuff">
+              <li><i class="icon-heart2"></i>249</li>
+              <li><i class="icon-eye2"></i>1,308</li>
+              <li><a href="#">Read More<i class="icon-arrow-right22"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div> -->
+    </div>
+  </div>
+</div>
+
+    {% else %}
+    <div class="container" >
+    <h1>Please register</h1>
+    <form method="post",enctype="multipart/form_data">
+      {% csrf_token %}
+      {{user_form|crispy}}
+      {{profile_form|crispy}}
+      <!-- <label for="Constituency">Constituency Code*</label>
+      <br>
+      <input type="text" name="Constituency Code" >
+      <br> -->
+      <br>
+      <input type="submit" name="" value="Register">
+    </form>
+    </div>
+
+    {% endif %}
+  </div>
+  <div class="gototop js-top">
+    <a href="#" class="js-gotop"><i class="icon-arrow-up22"></i></a>
+  </div>
+
+  <script src="/static/js/jquery.min.js"></script>
+
+  <script src="/static/js/jquery.easing.1.3.js"></script>
+
+  <script src="/static/js/bootstrap.min.js"></script>
+
+  <script src="/static/js/jquery.waypoints.min.js"></script>
+
+  <script src="/static/js/jquery.flexslider-min.js"></script>
+
+  <script src="/static/js/main.js"></script>
+
+  </body>
+  </html>
